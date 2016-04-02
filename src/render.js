@@ -144,9 +144,11 @@ function render(state) {
 
     // if we're not yet at max
     // show replies, and an input box
+    let replies = [];
+    let input = [];
     if (indent < max) {
-      let replies = h('div', rs.map(childMessageV))
-      let input = postInput(m.key, 'reply')
+      replies = h('div', rs.map(childMessageV))
+      input = postInput(m.key, 'reply')
     }
 
     return h('div', [
